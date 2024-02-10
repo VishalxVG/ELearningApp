@@ -30,3 +30,33 @@ Widget text16Normal({
     ),
   );
 }
+
+Widget text14Normal({
+  required String text,
+  Color color = AppColors.primaryThreeElementText,
+}) {
+  return Text(
+    text,
+    textAlign: TextAlign.center,
+    style: TextStyle(
+      color: color,
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+    ),
+  );
+}
+
+Widget textUnderLine({String text = "Your Text"}) {
+  return GestureDetector(
+    onTap: () {},
+    child: Text(
+      text,
+      style: const TextStyle(
+        color: AppColors.primaryText,
+        fontWeight: FontWeight.normal,
+        decoration: TextDecoration.underline,
+        decorationColor: AppColors.primaryText,
+      ),
+    ),
+  );
+}
