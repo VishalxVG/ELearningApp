@@ -1,6 +1,5 @@
 import 'package:elearningapp/common/widgets/app_shadow.dart';
 import 'package:elearningapp/common/widgets/text_Widget.dart';
-import 'package:elearningapp/pages/sign_in_Screen/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 Widget appOnboardingScreen(PageController pageController, BuildContext context,

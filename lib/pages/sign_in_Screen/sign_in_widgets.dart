@@ -4,23 +4,6 @@ import 'package:elearningapp/common/widgets/image_widgets.dart';
 import 'package:elearningapp/common/widgets/text_Widget.dart';
 import 'package:flutter/material.dart';
 
-AppBar customAppBar() {
-  return AppBar(
-    bottom: PreferredSize(
-      preferredSize: const Size.fromHeight(1),
-      child: Container(
-        color: Colors.red,
-        height: 1,
-      ),
-    ),
-    title: text16Normal(
-      text: "Login",
-      color: AppColors.primaryText,
-    ),
-    centerTitle: true,
-  );
-}
-
 Widget thirdPartyLogin() {
   return Container(
     margin: const EdgeInsets.only(top: 40, right: 80, left: 80, bottom: 20),
@@ -51,6 +34,7 @@ Widget appTextField({
   String icon = "assets/icons/user.png",
   String hintText = "TypeIn your info",
   bool isObscure = false,
+  void Function(String value)? func,
 }) {
   return Container(
     padding: const EdgeInsets.only(left: 25, right: 25),
@@ -79,6 +63,7 @@ Widget appTextField({
                 width: 280,
                 height: 50,
                 child: TextField(
+                  onChanged: (value) => func!(value),
                   keyboardType: TextInputType.multiline,
                   decoration: InputDecoration(
                     hintText: hintText,
@@ -109,7 +94,6 @@ Widget appTextField({
                   ),
                   autocorrect: false,
                   maxLines: 1,
-                  onChanged: (value) {},
                   obscureText: isObscure,
                 ),
               ),
