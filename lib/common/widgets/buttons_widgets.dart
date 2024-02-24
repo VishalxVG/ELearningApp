@@ -1,21 +1,32 @@
 import 'package:elearningapp/common/utils/app_color.dart';
 import 'package:elearningapp/common/widgets/app_shadow.dart';
 import 'package:elearningapp/common/widgets/text_Widget.dart';
+
 import 'package:flutter/material.dart';
 
 Widget appButton({
   String text = "Login",
   Color color = AppColors.primaryBackground,
+  double width = 325,
+  double height = 50,
+  bool isLogin = true,
+  BoxBorder? border,
+  BuildContext? context,
+  void Function()? func,
 }) {
   return GestureDetector(
+    onTap: func,
     child: Container(
       width: 325,
       height: 50,
-      decoration: appBoxShadow(),
+      decoration: appBoxShadow(
+        color: isLogin ? AppColors.primaryElement : Colors.white,
+        border: border,
+      ),
       child: Center(
         child: text16Normal(
           text: text,
-          color: color,
+          color: isLogin ? color : AppColors.primaryText,
         ),
       ),
     ),
